@@ -70,11 +70,18 @@ def run_test_mtc(multiprocess=False, chunkless=False):
             test_path("output"),
         ]
 
-    subprocess.Popen(
+    process = subprocess.Popen(
         ["coverage", "run", "-a", file_path] + run_args,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
+
+    output, error = process.communicate()
+
+    if process.returncode != 0:
+        raise Exception(
+            "File handling failed %d %s %s" % (process.returncode, output, error)
+        )
 
     regress()
 
