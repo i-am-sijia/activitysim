@@ -5,7 +5,7 @@ households_sample_size:  10
 # simulate all households
 # households_sample_size: 0
 
-strict: True
+strict: False
 
 chunk_size: 0
 
