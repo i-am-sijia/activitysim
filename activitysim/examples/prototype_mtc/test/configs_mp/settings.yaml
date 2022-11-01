@@ -1,7 +1,7 @@
 inherit_settings: True
 
 # treat warnings as errors
-strict: True
+strict: False
 
 # raise error if any sub-process fails without waiting for others to complete
 fail_fast: True
